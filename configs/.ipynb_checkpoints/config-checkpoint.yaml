@@ -1,0 +1,26 @@
+
+Data: 
+  train_image_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/train/Images"
+  train_mask_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/train/masks"
+  val_image_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/valid/Images"
+  val_mask_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/valid/masks"
+  test_image_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/test/Images"
+  test_mask_dir: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/test/masks"
+  dataset_path: '/optima/exchange/hjebril/plexilite/FAZ/split_dataset/dataset.npz'
+
+Train:
+  image_size: 320
+  img_channels: 1
+  batch_size: 4
+  epochs: 400
+  learning_rate: 0.001
+  seed: 27
+  rotation_range: 20
+  horizontal_flip: true
+  shear_range: 0.15
+  shuffle: true
+  patience: 100
+  fill_mode: 'nearest'
+
+checkpoint_path: "best_model_myheart_FAZ_UNET"
+

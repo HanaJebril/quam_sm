@@ -1,0 +1,67 @@
+
+mode: "test"  # or "test"
+method: "quam"    # or "mc" "mc_random" "mc" "mc"
+model:
+  architecture: "atten_unet"
+  model_path: "./checkpoints_atten_unet/best_ckpts" #  "best_model_304_tyche" "best_model_304_unet_10_10
+  data_size : [224,224]
+  in_channels: 3
+  n_classes: 3
+  channels: 64
+# dae_checkpoint: './logs/dae_saved_models/best_dae_data_myheart_bound_loss_512_data_augmentation.pth'
+# dae_checkpoints:
+# #   delete_circle_swap: './ablation_noise_dae/best_unet_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle_swap.pth'
+
+
+#     unet_dae: './ablation_noise_unet_dae/best_unet_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle_swap.pth'
+#     adv_dae: './ablation_noise_disc_dae/best_unet_disc_data_octa500_bound_loss_320_data_aug_delete_circle_swap.pth'
+#     unet_adv_dae: './dae_disc_unet/best_unet_disc_data_octa500_bound_loss_320_data_aug_delete_circle_swap.pth'
+#   delete_circle: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle.pth'
+#   gaussian: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_gaussian.pth'
+#   salt_pepper: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_salt_pepper.pth'
+#   elastic: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_elastic.pth'
+#   polygon: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_polygon.pth'
+#   swap: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_swap.pth'
+#   morphology: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_morphology.pth'
+#   delete_circle_elastic: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle_elastic.pth'
+#   delete_circle_gaussian: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle_gaussian.pth'
+#   delete_circle_salt_pepper: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_delete_circle_salt_pepper.pth'
+#   salt_pepper_elastic: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_salt_pepper_elastic.pth'
+#   gaussian_elastic: './ablation_noise_dae/best_dae_data_octa500_bound_loss_512_data_augmentation_groupped_gaussian_elastic.pth'
+
+
+
+testing:
+  -
+    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/sample"
+#     modality : ["images", "masks"]
+    output_folder: "./experemints_0_1_each_search_sample/quam/refuge/sample"
+    batch_size: 1
+    save_name: "refugee_sample"
+    transform: False
+    data_size : [224,224]
+#   -
+#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Validation-400"
+# #     modality : ["images", "masks"]
+#     output_folder: "./experemints_0_1_each_search/quam/refuge/valid"
+#     batch_size: 1
+#     save_name: "refugee_valid"
+#     transform: False
+#     data_size : [224,224]
+#   -
+#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
+# #     modality : ["images", "masks"]
+#     output_folder: "./experemints_0_1_each_search/quam/refuge/train"
+#     batch_size: 1
+#     save_name: "refugee_train"
+#     transform: False
+#     data_size : [224,224]
+    
+#   -
+#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Test-400"
+# #     modality : ["images", "masks"]
+#     output_folder: "./experemints_0_1_each_search/quam/refuge/test"
+#     batch_size: 1
+#     save_name: "refugee_test"
+#     transform: False
+#     data_size : [224,224]

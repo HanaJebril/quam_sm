@@ -1,0 +1,51 @@
+mode: "test"  # or "test"
+method: "MC"    # or "mc" "mc_random" "mc" "mc"
+model:
+  architecture: "unet"
+  model_path: "./logs/best_model_400_unet_myheart_healthy_disease" #  "best_model_304_tyche" "best_model_304_unet_10_10
+  data_size : [400,400]
+  in_channels: 1
+  n_classes: 2
+  channels: 64
+dae_checkpoint: './logs/dae_saved_models/best_dae_data_myheart_512_adv_penality.pth'
+training:
+  data_path: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/train"
+  modality : ["Images", "masks"]
+  batch_size: 4
+  learning_rate: 0.0005
+  num_epochs: 300
+
+validation:
+  data_path: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/valid"
+  modality : ["Images", "masks"]
+  batch_size: 1
+  frequency: 1   # e.g., how often to validate (every epoch, every N steps, etc.)
+
+
+
+testing:
+
+
+  -
+    data_path: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/train"
+    modality : ["Images", "masks"]
+    output_folder: "./results_adv_dae/mc/myheart_train"
+    batch_size: 1
+    save_name: "myheart_train"
+    transform: False
+ 
+  -
+    data_path: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/valid"
+    modality : ["Images", "masks"]
+    output_folder: "./results_adv_dae/mc/myheart_valid"
+    batch_size: 1
+    save_name: "myheart_valid"
+    transform: False
+
+  -
+    data_path: "/optima/exchange/hjebril/plexilite/FAZ/split_dataset/test"
+    modality : ["Images", "masks"]
+    output_folder: "./results_adv_dae/mc/myheart_test"
+    batch_size: 1
+    save_name: "myheart_test"
+    transform: False

@@ -1,0 +1,58 @@
+mode: "test" 
+method: "quam"   
+model:
+  architecture: "atten_unet"
+  model_path: "./checkpoints_atten_nodrop_unet/best_ckpts"
+  mc_model_path: "./checkpoints_atten_drop_unet/best_ckpts"
+  data_size : [224,224]
+  in_channels: 3
+  n_classes: 2
+  channels: 64
+  drop_mc: 0.3
+  drop_ref: 0.
+
+train:
+    path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
+    data_size : [224,224]
+testing:
+  -
+    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/sample"
+#     modality : ["images", "masks"]
+    output_folder: "./experemints_0_1_each_search/quam/refuge/sample"
+    batch_size: 1
+    save_name: "refugee_sample"
+    transform: False
+    data_size : [224,224]
+    
+  -
+    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Test-400"
+#     modality : ["images", "masks"]
+    output_folder: "./experemints_0_1_each_search/quam/refuge/test"
+    batch_size: 1
+    save_name: "refugee_test"
+    transform: False
+    data_size : [224,224]
+
+  -
+    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
+#     modality : ["images", "masks"]
+    output_folder: "./experemints_0_1_each_search/quam/refuge/train"
+    batch_size: 1
+    save_name: "refugee_train"
+    transform: False
+    data_size : [224,224]
+    
+  -
+    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Validation-400"
+#     modality : ["images", "masks"]
+    output_folder: "./experemints_0_1_each_search/quam/refuge/valid"
+    batch_size: 1
+    save_name: "refugee_valid"
+    transform: False
+    data_size : [224,224]
+    
+    
+
+    
+
+    

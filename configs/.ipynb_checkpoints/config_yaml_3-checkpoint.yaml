@@ -1,0 +1,120 @@
+mode: "test"  # or "test"
+method: "TTA"    # or "tta" "tta_random" "tta" "tta"
+model:
+  architecture: "unet"
+  model_path: "./logs/best_model_304_unet_10_10"#  "best_model_304_tyche" "best_model_304_unet_10_10
+  data_size : [304,304]
+  in_channels: 1
+  n_classes: 2
+  channels: 64
+
+training:
+  data_path: "../OCTA_500_6mm/octa_500_split_norandom/train"
+  modality : ["images", "labels"]
+  batch_size: 4
+  learning_rate: 0.0005
+  num_epochs: 300
+
+validation:
+  data_path: "../OCTA_500_6mm/octa_500_split_norandom/valid"
+  modality : ["images", "labels"]
+  batch_size: 1
+  frequency: 1   # e.g., how often to validate (every epoch, every N steps, etc.)
+
+
+
+testing:
+  - data_path: "/optima/exchange/hjebril/faz_seg_dataset/FAZ_sgementation"
+    context_path: "/optima/exchange/hjebril/faz_seg_dataset/context_data"
+    modality: [ "superficial_all", "superficial_masks2" ]
+    context_modalities: [ "superficial_all", "superficial_masks2" ]
+    output_folder: "./results_normal_ae/tta/Zenodoo3/superficial"
+    batch_size: 1
+    save_name: "Zenodoo_superficial"
+    transform: False
+
+#   -
+#     data_path: "../OCTA_500_6mm/octa_500_split_norandom/train"
+#     context_path: "../OCTA_500_6mm/octa_500_split_norandom/train"
+#     modality : ["images", "labels"]
+#     context_modalities: ["images", "labels"]
+#     output_folder: "./results_normal_ae/tta/octa500"
+#     batch_size: 1
+#     save_name: "octa500_train"
+#     transform: False
+#   -
+#     data_path: "../OCTA_500_6mm/octa_500_split_norandom/test"
+#     context_path: "../OCTA_500_6mm/octa_500_split_norandom/train"
+#     modality : ["images", "labels"]
+#     context_modalities: ["images", "labels"]
+#     output_folder: "./results_normal_ae/tta/octa500"
+#     batch_size: 1
+#     save_name: "octa500_test"
+#     transform: False
+
+#   - data_path: "../OCTA_500_6mm/octa_500_split_norandom/valid"
+#     context_path: "../OCTA_500_6mm/octa_500_split_norandom/train"
+#     modality: [ "images", "labels" ]
+#     context_modalities: ["images", "labels"]
+#     output_folder: "./results_normal_ae/tta/octa500"
+#     batch_size: 1
+#     save_name: "octa500_valid"
+#     transform: False
+
+#   -
+#     data_path: "/optima/exchange/hjebril/FAZID/Normals"
+#     context_path: "/optima/exchange/hjebril/FAZID/context_data"
+#     modality: ["Clear", "Mask"]
+#     context_modalities : ["Clear", "Mask"]
+#     output_folder: "./results_normal_ae/tta/FAZID/Normals"
+#     batch_size: 1
+#     save_name: "FAZID_Normals"
+#     transform: True
+
+#   -
+#     data_path: "/optima/exchange/hjebril/FAZID/Myopia"
+#     context_path: "/optima/exchange/hjebril/FAZID/context_data"
+#     modality: [ "Clear", "Mask" ]
+#     context_modalities: [ "Clear", "Mask" ]
+#     output_folder: "./results_normal_ae/tta/FAZID/Myopia"
+#     batch_size: 1
+#     save_name: "FAZID_Myopia"
+#     transform: True
+
+#   - data_path: "/optima/exchange/hjebril/FAZID/Diabetic"
+#     context_path: "/optima/exchange/hjebril/FAZID/context_data"
+#     modality: [ "Clear", "Mask" ]
+#     context_modalities: [ "Clear", "Mask" ]
+#     output_folder: "./results_normal_ae/tta/FAZID/Diabetic"
+#     batch_size: 1
+#     save_name: "FAZID_Diabetic"
+#     transform: True
+# #
+
+#   - data_path: "/optima/exchange/hjebril/updated_rose/ROSE-O/ROSE-O/test"
+#     context_path: "/optima/exchange/hjebril/updated_rose/ROSE-O/ROSE-O/context_data"
+#     modality: ["img/IVC", "gt/FAZ"]
+#     context_modalities: ["img/IVC", "gt/FAZ"]
+#     output_folder: "./results_normal_ae/tta/rose/test"
+#     batch_size: 1
+#     save_name: "rose_test"
+#     transform: True
+
+#   - data_path: "/optima/exchange/hjebril/updated_rose/ROSE-O/ROSE-O/train"
+#     context_path: "/optima/exchange/hjebril/updated_rose/ROSE-O/ROSE-O/context_data"
+#     modality: [ "img/IVC", "gt/FAZ" ]
+#     context_modalities: [ "img/IVC", "gt/FAZ" ]
+#     output_folder: "./results_normal_ae/tta/rose/train"
+#     batch_size: 1
+#     save_name: "rose_train"
+#     transform: True
+
+# #  - data_path: "/optima/exchange/hjebril/plexilite/FAZ"
+# #    context_path: "/optima/exchange/hjebril/plexilite/FAZ"
+# #    modality: [ "Images_3mm", "label_3mm" ]
+# #    context_modalities: [ "context_set_images", "context_set_labels" ]
+# #    output_folder: "./results_normal_ae/tta/myheart/faz"
+# #    batch_size: 1
+# #    save_name: "myheart_faz"
+# #    transform: False
+
