@@ -13,11 +13,11 @@ model:
   drop_ref: 0.
 
 train:
-    path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
+    path: "/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
     data_size : [224,224]
 testing:
 #   -
-#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/sample"
+#     data_path: "/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/sample"
 # #     modality : ["images", "masks"]
 #     output_folder: "./experemints_ero_dil_3_100/quam/refuge/sample"
 #     batch_size: 1
@@ -26,7 +26,7 @@ testing:
 #     data_size : [224,224]
     
   -
-    data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Test-400"
+    data_path: "/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Test-400"
 #     modality : ["images", "masks"]
     output_folder: "./experemints_ero_dil_3_2/quam/refuge/test"
     batch_size: 1
@@ -35,7 +35,7 @@ testing:
     data_size : [224,224]
 
 #   -
-#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
+#     data_path: "/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Training-400"
 # #     modality : ["images", "masks"]
 #     output_folder: "./experemints_ero_dil/quam/refuge/train"
 #     batch_size: 1
@@ -44,7 +44,7 @@ testing:
 #     data_size : [224,224]
     
 #   -
-#     data_path: "/optima/exchange/hjebril/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Validation-400"
+#     data_path: "/REFUGE1/REFUGE1-Multi-rater label Data/REFUGE-Multi-rater Data/Validation-400"
 # #     modality : ["images", "masks"]
 #     output_folder: "./experemints_ero_dil/quam/refuge/valid"
 #     batch_size: 1
