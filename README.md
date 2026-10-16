@@ -41,3 +41,24 @@ The quantitative results demonstrate that **QUAM-SM** provides a superior charac
 
 
 ![QUAM-SM QUALITATIVE RESULTS](quam_visual.png)
+
+
+
+
+
+## Citation
+
+If you find this repository or our paper useful in your research, please consider citing:
+
+```bibtex
+@InProceedings{JebHan_Quantification_MICCAI2026,
+  author    = {Jebril, Hana and Pinetz, Thomas and Klambauer, G{\"u}nter and Bogunovi{\'c}, Hrvoje},
+  title     = {{Quantification of Uncertainty with Adversarial Models in Medical Image Segmentation}},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026},
+  year      = {2026},
+  publisher = {Springer Nature Switzerland},
+  volume    = {LNCS 16882},
+  month     = {September},
+  pages     = {pending}
+}
+```
